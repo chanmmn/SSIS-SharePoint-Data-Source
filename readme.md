@@ -18,7 +18,7 @@ It used to have a codeplex SharePoint data source but it just didn&#39;t last fo
 
 2. Drag **Data Flow Task** to **Control Flow** page. Double click the Data Flow Task. Drag **Script Component** to Data Flow page. When Select **Script Component Type** pops up then select **Source**.
 
- ![](data:image/p1.png)
+ ![](image/p1.png)
  
 3. Double click the Script Component. Click on **Inputs and Outputs.**
 
