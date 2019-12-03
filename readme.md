@@ -40,7 +40,7 @@ publicoverridevoid CreateNewOutputRows()
 
         ClientContext clientContext = new ClientContext(siteUrl);
 
-        string password = &quot;password&quot;;
+        string password = "password";
 
         SecureString securePassword = new SecureString();
 
@@ -52,13 +52,13 @@ publicoverridevoid CreateNewOutputRows()
 
         }
 
-        clientContext.Credentials = new SharePointOnlineCredentials(&quot;ming@ming.onmicrosoft.com&quot;, securePassword);
+        clientContext.Credentials = new SharePointOnlineCredentials("ming@ming.onmicrosoft.com", securePassword);
 
-        SP.List oList = clientContext.Web.Lists.GetByTitle(&quot;ProductList&quot;);
+        SP.List oList = clientContext.Web.Lists.GetByTitle("ProductList");
 
         CamlQuery camlQuery = new CamlQuery();
 
-        camlQuery.ViewXml = &quot;\&lt;View\&gt;\&lt;RowLimit\&gt;100\&lt;/RowLimit\&gt;\&lt;/View\&gt;&quot;;
+        camlQuery.ViewXml = "<View><RowLimit>100</RowLimit></View>";;
 
         ListItemCollection collListItem = oList.GetItems(camlQuery);
 
@@ -68,9 +68,9 @@ publicoverridevoid CreateNewOutputRows()
 
                 item => item.Id,
 
-                item => item[&quot;CategoryId&quot;],
+                item => item["CategoryId"],
 
-                item => item[&quot;ProductName&quot;]));
+                item => item["ProductName"]));
 
         clientContext.ExecuteQuery();
 
@@ -78,13 +78,13 @@ publicoverridevoid CreateNewOutputRows()
 
         {
 
-                Console.WriteLine(&quot;ID: {0} \nId: {1} \nName: {2}&quot;, oListItem, oListItem.Id, oListItem[&quot;ProductName&quot;]);
+                Console.WriteLine("ID: {0} \nId: {1} \nName: {2}", oListItem, oListItem.Id, oListItem["ProductName"]);
 
                 Output0Buffer.AddRow();
 
-                Output0Buffer.ProductNameOut = oListItem[&quot;ProductName&quot;].ToString();
+                Output0Buffer.ProductNameOut = oListItem["ProductName"].ToString();
 
-                Output0Buffer.CategoryIdOut = oListItem[&quot;CategoryId&quot;].ToString();
+                Output0Buffer.CategoryIdOut = oListItem["CategoryId"].ToString();
 
                 }
 
