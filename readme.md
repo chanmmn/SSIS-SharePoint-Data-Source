@@ -64,13 +64,13 @@ publicoverridevoid CreateNewOutputRows()
 
         clientContext.Load(collListItem,
 
-                items =\&gt; items.Include(
+                items => items.Include(
 
-                item =\&gt; item.Id,
+                item => item.Id,
 
-                item =\&gt; item[&quot;CategoryId&quot;],
+                item => item[&quot;CategoryId&quot;],
 
-                item =\&gt; item[&quot;ProductName&quot;]));
+                item => item[&quot;ProductName&quot;]));
 
         clientContext.ExecuteQuery();
 
