@@ -18,14 +18,25 @@ A lot of people are still looking for a SSIS SharePoint data destination. In thi
 4. Replace the Input0_ProcessInputRow method with the following code. Of course, you need to change the siteUrl, password, and login name.
 
 public override void Input0_ProcessInputRow(Input0Buffer Row)
+
 {
+
 	string siteUrl = "https://chanmm.sharepoint.com/DevSite/";
+
 	 ClientContext clientContext = new ClientContext(siteUrl);
+
 	 clientContext.Credentials = SingIn.Login();
+
 	SP.List oList = clientContext.Web.Lists.GetByTitle("NewList");
+
 	ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
+
 	ListItem oListItem = oList.AddItem(itemCreateInfo);
+
 	oListItem["Title"] = Row.ProductName;
+
 	 oListItem.Update();
+
 	clientContext.ExecuteQuery();
+
 } 
