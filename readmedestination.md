@@ -5,7 +5,9 @@ Pre-requisite:
 2. You have installed SharePoint SDK to your development environment https://chanmingman.wordpress.com/2018/10/07/ssis-could-not-load-file-or-assembly-microsoft-sharepoint-client/ 
 3. SQL Server Data Tool is installed  https://chanmingman.wordpress.com/2014/08/02/sql-server-data-tool-ssdt/. 
 4. You have Office 365 SharePoint online. 
+
 A lot of people are still looking for a SSIS SharePoint data destination. In this post, I will show you how to create a SSIS SharePoint Source with the combination of SharePoint SDK and Script Component in SSIS.
+
 1. Create a SSIS project.
 2. Drag Data Flow Task to Control Flow page. Double click the Data Flow Task. Drag OLE DB Source. the Northwind database, Products table. You can create a Connect Manager to connect to the database.
 3. Drag Script Component to Data Flow page. When Select Script Component Type pops up then select Destination.
