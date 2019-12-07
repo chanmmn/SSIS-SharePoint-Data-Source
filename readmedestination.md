@@ -11,3 +11,5 @@ A lot of people are still looking for a SSIS SharePoint data destination. In thi
 1. Create a SSIS project.
 2. Drag Data Flow Task to Control Flow page. Double click the Data Flow Task. Drag OLE DB Source. the Northwind database, Products table. You can create a Connect Manager to connect to the database.
 3. Drag Script Component to Data Flow page. When Select Script Component Type pops up then select Destination.
+
+![](image/p5.png)
