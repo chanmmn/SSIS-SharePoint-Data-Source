@@ -40,3 +40,32 @@ public override void Input0_ProcessInputRow(Input0Buffer Row)
 	clientContext.ExecuteQuery();
 
 } 
+
+7. Create a signIn class (of course you need to replace the username and password). 
+
+class SignIn
+
+{
+
+	public static SharePointOnlineCredentials Login()
+
+	{
+
+    	string password = "password";
+		
+	    SecureString securePassword = new SecureString();
+		
+	    foreach (char c in password)
+		
+	    {
+		
+			securePassword.AppendChar(c);
+		
+		}
+		
+		return (new SharePointOnlineCredentials("sharepoint@sharepoint.onmicrosoft.com", securePassword));
+	}
+
+8. Your final Data Flow Task will look as such.
+
+![](image/p6.png)
